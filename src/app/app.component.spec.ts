@@ -1,7 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-
-describe('AppComponent', () => {
+/**
+ * si se agrega el x delante le indicamos que omita.
+ * En nuestro caso agregamos xdescribe al compoentne
+ * AppComponent, esto omitirá todas las pruebas que están
+ * dentro
+ */
+xdescribe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
