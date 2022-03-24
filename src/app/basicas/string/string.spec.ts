@@ -1,7 +1,8 @@
-//Agrupa pruebas
-describe('Pruebas de Strings');
+import { mensaje } from './string';
 
-//Es una prueba
-it('Debe de regresar un string');
-
-it('Debe de contener un nombre');
+describe('Pruebas de String', () => {
+    it('Debe de regresar un string', () => {
+        const resp = mensaje('Martín');
+        expect(typeof resp).toBe('string');
+    })
+})
