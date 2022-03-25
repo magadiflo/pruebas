@@ -28,7 +28,9 @@ export class MedicosComponent implements OnInit {
     this._medicoService.agregarMedico(medico)
       .subscribe({
         next: (medicoDB: any) => this.medicos.push(medicoDB),
-        error: (err: any) => this.mensajeError = err
+        error: (err: any) => {
+          this.mensajeError = err.message;  
+        }
       });
   }
 
