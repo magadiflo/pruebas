@@ -16,7 +16,7 @@ describe('MedicosComponent', () => {
         const medicos = ['medico1', 'medico2', 'medico3'];
 
         spyOn(servicio, 'getMedicos').and.callFake(() => {
-            return of([medicos]);
+            return of(medicos);
         });
 
         componente.ngOnInit();
@@ -30,6 +30,14 @@ describe('MedicosComponent', () => {
         componente.agregarMedico();
 
         expect(espia).toHaveBeenCalled();
+    });
+
+    it('Debe de agregar un nuevo médico al arreglo de médicos', () => {
+        const medico = { id: 1, nombre: 'Martín' };
+        spyOn(servicio, 'agregarMedico').and.returnValue(of(medico));
+        componente.agregarMedico();
+
+        expect(componente.medicos.indexOf(medico)).toBeGreaterThanOrEqual(0);
     });
 
 
