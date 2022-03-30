@@ -1,6 +1,8 @@
 import { TestBed, ComponentFixture } from "@angular/core/testing";
 
 import { MedicoComponent } from "./medico.component";
+import { MedicoService } from './medico.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('Médico component', () => {
     
@@ -12,6 +14,9 @@ describe('Médico component', () => {
             declarations: [
                 MedicoComponent,
             ],
+            imports: [
+                HttpClientModule,
+            ]
         });
         
         fixture = TestBed.createComponent(MedicoComponent);
