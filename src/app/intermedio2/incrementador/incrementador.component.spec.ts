@@ -45,4 +45,15 @@ describe('Incremendator Component', () => {
 
     });
 
+    it('Debe  incrementar/decrementar en 5, con un click en el botón', () => {
+        const botones = fixture.debugElement.queryAll(By.css('.btn-primary'));
+        
+        botones[0].triggerEventHandler('click', null);
+        expect(component.progreso).toBe(45);
+        
+        botones[1].triggerEventHandler('click', null);
+        expect(component.progreso).toBe(50);
+
+    });
+
 });
