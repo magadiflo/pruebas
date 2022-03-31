@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-router-medico',
@@ -8,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RouterMedicoComponent implements OnInit {
 
-  constructor() { }
+  id!: string;
+
+  constructor(
+    public router: Router,
+    public activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activateRoute.params
+      .subscribe(params => {
+        this.id = params['id'];
+      });
+  }
+
+  guardarMedico() {
+    this.router.navigate(['medico', '123']);
   }
 
 }
